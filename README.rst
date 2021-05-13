@@ -1,2 +1,2 @@
-The official documentation for PocketMineStudio
+The official documentation for PocketMineStudio:
 https://pocketminestudio.readthedocs.io/
