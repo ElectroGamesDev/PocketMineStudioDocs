@@ -1,27 +1,26 @@
 Functions
 ========
 
+Functions are used to run code when an event occurs.
+
+
 PlayerJoinEvent
 --------
 
-- Be awesome
-- Make things faster
+Usage: Runs the code in the function when a player joins the game.
+
 
 PlayerDeathEvent
 ------------
 
-Install $project by running:
-
-    install project
+Usage: Runs the code in the function when a player dies.
 
 CommandEvent
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+Usage: This function is used to create commands.
 
 PlayerQuitEvent
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+Usage: Runs the code in the function when a player leaves the game.
