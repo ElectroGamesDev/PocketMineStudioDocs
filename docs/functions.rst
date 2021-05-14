@@ -45,10 +45,11 @@ $sender = The player who sends the command
 Example:
 
 .. code-block:: sh
+
   function CommandEvent{
       command "sendmessage": # What ever is in the "" will regester as a command
               $sender->sendMessage("Hello There!"); # This will send a message to the Player sending the command
-	      # IMPORTANT: Make sure to indent/tab twice, not once like I did
+	      # IMPORTANT: Make sure to indent/tab twice like I did, not once
   }
 
 PlayerQuitEvent
@@ -63,5 +64,5 @@ Example:
 .. code-block:: sh
 
   function PlayerQuitEvent{
-      $player->clearInventory(true); # This will clear the Player sending the message inventory
+      $player->clearInventory(true); # This will clear the Player who died's inventory
   }
