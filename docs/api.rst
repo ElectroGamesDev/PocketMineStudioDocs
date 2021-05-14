@@ -70,3 +70,16 @@ Example:
   function PlayerQuitEvent{
       $killer->sendMessage("You killed " . $player->getName() . "!");
   }
+  
+sendMessage
+-------
+
+Usage: Sends a player a message
+
+Example:
+
+.. code-block:: sh
+
+  function PlayerJoinEvent{
+      $player->sendMessage("Welcome!");
+  }
