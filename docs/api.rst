@@ -1,6 +1,8 @@
 API
 ========
 
+This is the offical API for PocektMineStudio!
+
 $player
 --------
 
