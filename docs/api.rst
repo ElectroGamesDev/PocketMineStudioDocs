@@ -41,7 +41,7 @@ Example:
 clearInventory
 ----------
 
-Usage: This function is used to create commands.
+Usage: This function is used to clear a players inventory
 
 $sender = The player who sends the command
 
