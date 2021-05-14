@@ -26,6 +26,7 @@ PlayerDeathEvent
 Usage: Runs the code in the function when a player dies.
 
 $player = The player who dies
+
 $killer = The player kills $player
 
 Example:
