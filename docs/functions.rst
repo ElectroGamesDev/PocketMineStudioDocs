@@ -16,8 +16,8 @@ Example:
 .. code-block:: sh
 
   function PlayerJoinEvent{
-	  $player->sendMessage('Welcome!');
-	}
+      $player->sendMessage('Welcome!'); # This will send a message to the Player who joined the server
+  }
    
 
 PlayerDeathEvent
@@ -25,12 +25,43 @@ PlayerDeathEvent
 
 Usage: Runs the code in the function when a player dies.
 
+$player = The player who dies
+
+Example:
+
+.. code-block:: sh
+
+  function PlayerDeathEvent{
+      $player->sendMessage('You Died!'); # This will send a message to the Player who died
+  }
+
 CommandEvent
 ----------
 
 Usage: This function is used to create commands.
 
+$sender = The player who sends the command
+
+Example:
+
+.. code-block:: sh
+  function CommandEvent{
+      command "sendmessage": # What ever is in the "" will regester as a command
+              $sender->sendMessage("Hello There!"); # This will send a message to the Player sending the command
+	      # IMPORTANT: Make sure to indent/tab twice, not once like I did
+  }
+
 PlayerQuitEvent
 -------
 
 Usage: Runs the code in the function when a player leaves the game.
+
+$player = The player who leaves the game
+
+Example:
+
+.. code-block:: sh
+
+  function PlayerQuitEvent{
+      $player->clearInventory(true); # This will clear the Player sending the message inventory
+  }
