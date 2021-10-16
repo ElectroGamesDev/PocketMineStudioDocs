@@ -3,12 +3,16 @@ API
 
 This is the offical API for PocektMineStudio!
 
+.. note::
+
+    PocketMine Studio is NOT case sensitive
+
 $player
 --------
 
 .. note::
 
-    Use $sender if you are using in a CommandEvent function
+    You can use both $player and $p to get the player
 
 Usage: Gets the player who ran an event
 
@@ -17,25 +21,27 @@ Example:
 .. code-block:: sh
 
   function PlayerJoinEvent{
-      $player->sendMessage('Welcome!');
+      $player->sendMessage("Welcome!");
+      $p->sendMessage("Welcome!");
   }
-   
+  
+sendMessage
+----------
 
-$sender
-------------
+Usage: This function is used to send a player a message
 
 .. note::
 
-    $sender can only be used in a CommandEvent function
-
-Usage: Gets the player who ran a command
+    $player = the player you are sending the message to. You can use sm, sendmessage, and message to send messages
 
 Example:
 
 .. code-block:: sh
 
-  function CommandEvent{
-      $sender->sendMessage('You Died!');
+  PlayerJoinEvent{
+      $player->sendMessage("Welcome!");
+      $player->sm("Welcome!");
+      $player->message("Welcome!");
   }
 
 clearInventory
@@ -69,17 +75,4 @@ Example:
 
   function PlayerQuitEvent{
       $killer->sendMessage("You killed " . $player->getName() . "!");
-  }
-  
-sendMessage
--------
-
-Usage: Sends a player a message
-
-Example:
-
-.. code-block:: sh
-
-  function PlayerJoinEvent{
-      $player->sendMessage("Welcome!");
   }
