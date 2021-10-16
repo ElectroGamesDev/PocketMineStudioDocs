@@ -1,4 +1,4 @@
-API
+Methods
 ========
 
 This is the offical API for PocektMineStudio!
@@ -20,7 +20,7 @@ Example:
 
 .. code-block:: sh
 
-  function PlayerJoinEvent{
+  PlayerJoinEvent{
       $player->sendMessage("Welcome!");
       $p->sendMessage("Welcome!");
   }
@@ -28,7 +28,7 @@ Example:
 sendMessage
 ----------
 
-Usage: This function is used to send a player a message
+Usage: This method is used to send a player a message
 
 .. note::
 
@@ -47,7 +47,7 @@ Example:
 clearInventory
 ----------
 
-Usage: This function is used to clear a players inventory
+Usage: This method is used to clear a players inventory
 
 $sender = The player who sends the command
 
@@ -67,12 +67,30 @@ $killer
 
     $killer can only be used in a PlayerDeathEvent function
 
-Usage: Gets the player who killed the player
+Usage: Gets the player who killed a player
 
 Example:
 
 .. code-block:: sh
 
-  function PlayerQuitEvent{
-      $killer->sendMessage("You killed " . $player->getName() . "!");
+  PlayerDeathEvent{
+      $killer->sendMessage("You killed " . $victim->getName() . "!");
   }
+  
+$victim
+-------
+
+.. note::
+
+    $victim can only be used in a PlayerDeathEvent function
+
+Usage: Gets the player who was killed
+
+Example:
+
+.. code-block:: sh
+
+  PlayerDeathEvent{
+      $victim->sendMessage("$killer->getName() . " killed you!");
+  }
+
