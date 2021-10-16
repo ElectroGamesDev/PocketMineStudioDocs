@@ -3,6 +3,12 @@ Functions
 
 Functions are used to run code when an event occurs.
 
+.. note::
+
+    PocketMine Studio is NOT case sensitive
+    
+    You do NOT need to put "function" infront of a function
+
 
 PlayerJoinEvent
 --------
@@ -15,7 +21,7 @@ Example:
 
 .. code-block:: sh
 
-  function PlayerJoinEvent{
+  PlayerJoinEvent{
       $player->sendMessage('Welcome!'); # This will send a message to the Player who joined the server
   }
    
@@ -25,16 +31,17 @@ PlayerDeathEvent
 
 Usage: Runs the code in the function when a player dies.
 
-$player = The player who dies
+$victim = The player who dies
 
-$killer = The player kills $player
+$killer = The player kills $victim
 
 Example:
 
 .. code-block:: sh
 
-  function PlayerDeathEvent{
-      $player->sendMessage('You Died!'); # This will send a message to the Player who died
+  PlayerDeathEvent{
+      $victim->sendMessage("You Died!"); # This will send a message to the Player who died
+      $killer->sendMessage("You killed " . $victim->getName() . "!"); # This will send a message to the killer
   }
 
 CommandEvent
@@ -42,16 +49,15 @@ CommandEvent
 
 Usage: This function is used to create commands.
 
-$sender = The player who sends the command
+$player = The player who sends the command
 
 Example:
 
 .. code-block:: sh
 
-  function CommandEvent{
+  CommandEvent{
       command "sendmessage": # What ever is in the "" will regester as a command
-              $sender->sendMessage("Hello There!"); # This will send a message to the Player sending the command
-	      # IMPORTANT: Make sure to indent/tab twice like I did, not once
+              $player->sendMessage("Hello There!"); # This will send a message to the Player sending the command
   }
 
 PlayerQuitEvent
@@ -65,6 +71,6 @@ Example:
 
 .. code-block:: sh
 
-  function PlayerQuitEvent{
+  PlayerQuitEvent{
       $player->clearInventory(true); # This will clear the Player who died's inventory
   }
