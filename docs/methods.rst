@@ -93,4 +93,21 @@ Example:
   PlayerDeathEvent{
       $victim->sendMessage("$killer->getName() . " killed you!");
   }
+  
+addStringTag
+-------
+
+.. note::
+
+    addStringTag only works for items
+
+Usage: Sets a string tag to an item
+
+Example:
+
+.. code-block:: sh
+
+  PlayerDeathEvent{
+      $victim->sendMessage("$killer->getName() . " killed you!");
+  }
 
